@@ -1,0 +1,9 @@
+Commands to generate RSA keys pair
+	openssl genrsa -out private_key.pem 2048
+	openssl rsa -in private_key.pem -pubout -outform PEM -out public_key.pem
+
+Program Usage - 
+To Encrypt 
+	python fcrypt.py -e destination_public_key_filename sender_private_key_filename input_plaintext_file ciphertext_file
+To Decrypt
+	python fcrypt.py -d destination_private_key_filename sender_public_key_filename ciphertext_file output_plaintext_file
